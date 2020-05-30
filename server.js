@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const { db } = require('./db/db');
 const path = require("path");
+const PORT = process.env.PORT || 3001;
 
 app.get("/notes", function(req, res) {
         res.sendFile(path.join(__dirname, "./public/notes.html"));
@@ -17,7 +18,6 @@ app.get('/api/db', (req, res) => {
 
 app.use(express.static('public'))
 
-app.listen(3001, () => {
-    console.log(`API server now on port 3001!`);
+app.listen(PORT, () => {
+    console.log(`API server now on port ${PORT}!`);
   });
-
