@@ -4,7 +4,7 @@ const router = require('express').Router()
 
 //HTML routes to load pages
 router.get("/notes", function(req, res) {
-    res.sendFile(path.join(__dirname, "../../public/notes.html"))
+    res.sendFile(path.join(__dirname, '../../public/notes.html'))
 })
 
 router.get("/", function(req, res) {
